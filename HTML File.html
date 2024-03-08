@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- JS function encased in <script> tags -->
+    <script>
+        function myFunction() {
+          document.getElementById("demo2").innerHTML = "Paragraph changed.";
+        }
+    </script>
+</head>
+<body>
+    <h2>What Can JavaScript Do?</h2>
+
+    <p id="demo">JavaScript can change HTML content.</p>
+
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+<!--
+    <h2>What Can JavaScript Do?</h2>
+
+    <p>JavaScript can change HTML attribute values.</p>
+
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+    <button onclick="document.getElementById('myImage').src='img\goku.jpg'">Normal Goku</button>
+
+    <img id="myImage" src='img\goku.jpg'  alt = "where is Goku?;" style="width:100px">
+
+    <button onclick="document.getElementById('myImage').src='img\supergoku.jpg'">Super Saiyan</button>
+
+    this won't work. can't give any more time to it now. once a button is pushed, it breaks. online i see solutions with
+    writing functions, which i won't get into the weeds of right now
+    -->
+
+    <h2>Demo JavaScript in Head</h2>
+
+    <p id="demo2">A Paragraph.</p>
+
+    <button type="button" onclick="myFunction()">Try it</button>
+    <!-- button calls function, function calls paragraph with id demo2 and changes the text -->
+
+
+    <script src="myScript.js"></script>
+    <h2>External script demo</h2>
+    <p id="demo3">Wizz</p>
+    <button type="button" onclick="externalFunction()">Wizz</button>
+    <button type="button" onclick="externalFunction2()">No wizz</button>
+
+<!-- common test format for function, using .write?
+    <script>
+document.write(5 + 6);
+</script>
+-->
+
+    <!--
+    <script>
+window.alert(5 + 6);
+</script>
+-->
+
+<!-- in HTML, JS programs are executed by web browser -->
+
+    <!-- use variable inside script block. 'let' is the common modern practice, not 'var' -->
+    <p id="demo4"></p>
+    <script>
+    let carName = "Volvo";
+    document.getElementById("demo4").innerHTML = carName;
+    </script>
+
+<!-- var has global scope and can be accessed outside of code block. let has block scope and cannot be
+accessed outside of block and cannot be redefined within block? you can redeclare var in block. redefining var will affect
+  the variable outside of the block. let will change the variable in the block but subsequent code outside of block
+  still has OG value
+
+  an undeclared variable such as name = "billy" then stating var name; is accetpable where variable type assigned
+  after use. this is called 'hoisting'
+
+  const can push and change elements say in an array, but can't redefine the whole constant
+
+  same variable can hold different datatypes when reassigned -->
+
+    <button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+    <!-- date function works even though i haven't written the function in myscript.. must be inbuilt? -->
+
+
+
+
+
+
+
+</body>
+</html>
